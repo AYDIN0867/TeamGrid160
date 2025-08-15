@@ -65,7 +65,7 @@ public WebDriver setUpFireFoxDriver(){
     public WebDriver setUpEdgeDriver(){
 
         capabilities.setPlatform(Platform.ANY);//Platform secimi yaptik
-        capabilities.setBrowserName("edge");//Browsername secimi yaptık.
+        capabilities.setBrowserName("MicrosoftEdge");//Browsername secimi yaptık.
         capabilities.setVersion("139.0.3405.86");//Browser version secimi yaptık
 
         EdgeOptions edgeOptions=new EdgeOptions();

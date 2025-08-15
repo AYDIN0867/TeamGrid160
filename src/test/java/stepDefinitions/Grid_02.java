@@ -22,9 +22,27 @@ void chromeTest(){
 
 }
 
+@Test
+    void firefoxTest(){
+
+    driver=manage.setUpFireFoxDriver();
+    driver.get("https://www.coolstoves.com/");
+    System.out.println(driver.getTitle());
+    System.out.println(driver.getCurrentUrl());
 
 
+}
 
+    @Test
+    void edgeTest(){
+
+     driver=manage.setUpEdgeDriver();
+    driver.get("https://www.coolstoves.com/");
+    System.out.println(driver.getTitle());
+    System.out.println(driver.getCurrentUrl());
+
+
+}
 
 
 
