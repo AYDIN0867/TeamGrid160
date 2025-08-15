@@ -42,28 +42,28 @@ public class DriverFactory {
 
         switch (browser.toLowerCase()) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "src/test/GRID/BrowsersDrivers/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src/test/Grid/BrowsersDrivers/chromedriver.exe");
                 ChromeOptions chromeOptions = new ChromeOptions();
                 driver = new ChromeDriver(chromeOptions);
                 System.out.println("***** Local Chrome Driver *****");
                 break;
 
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", "src/test/GRID/BrowsersDrivers/geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "src/test/Grid/BrowsersDrivers/geckodriver.exe");
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 driver = new FirefoxDriver(firefoxOptions);
                 System.out.println("***** Local Firefox Driver *****");
                 break;
 
             case "edge":
-                System.setProperty("webdriver.edge.driver", "src/test/GRID/BrowsersDrivers/msedgedriver.exe");
+                System.setProperty("webdriver.edge.driver", "src/test/Grid/BrowsersDrivers/msedgedriver.exe");
                 EdgeOptions edgeOptions = new EdgeOptions();
                 driver = new EdgeDriver(edgeOptions);
                 System.out.println("***** Local Edge Driver *****");
                 break;
 
             case "ie":
-                System.setProperty("webdriver.ie.driver", "src/test/GRID/BrowsersDrivers/IEDriverServer.exe");
+                System.setProperty("webdriver.ie.driver", "src/test/Grid/BrowsersDrivers/IEDriverServer.exe");
                 InternetExplorerOptions ieOptions = new InternetExplorerOptions();
                 driver = new InternetExplorerDriver(ieOptions);
                 System.out.println("***** Local IE Driver *****");
@@ -87,12 +87,13 @@ public class DriverFactory {
             case "chrome":
                 capabilities.setPlatform(Platform.WINDOWS);
                 capabilities.setBrowserName("chrome");
-                capabilities.setVersion("132.0.6834.84");
+                capabilities.setVersion("139.0.7258.128");
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.merge(capabilities);
                 options = chromeOptions;
                 System.out.println("***** Grid Chrome Driver *****");
                 break;
+                //139.0.7258.128
             case "firefox":
                 capabilities.setPlatform(Platform.WINDOWS);
                 capabilities.setBrowserName("firefox");
@@ -128,7 +129,7 @@ public class DriverFactory {
 
 
         try {
-            driver = new RemoteWebDriver(new URL(ConfigReader.getProperty("gridURL")), options );
+            driver = new RemoteWebDriver(new URL(ConfigReader.getProperty("gridUrl")), options );
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
